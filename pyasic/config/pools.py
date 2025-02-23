@@ -117,8 +117,10 @@ class Pool(MinerConfigValue):
         }
 
     def as_espminer(self, user_suffix: str | None = None) -> dict:
+        url, port = self.url.split("://")[1].split(":")
         return {
-            "stratumURL": self.url,
+            "stratumURL": url,
+            "stratumPort": int(port),
             "stratumUser": f"{self.user}{user_suffix or ''}",
             "stratumPassword": self.password,
         }
