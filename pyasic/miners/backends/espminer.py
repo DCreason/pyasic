@@ -156,7 +156,7 @@ class ESPMiner(BaseMiner):
                             unit=self.algo.unit.GH,
                         ).into(self.algo.unit.default),
                         chip_temp=web_system_info.get("temp"),
-                        temp=web_system_info.get("vrTemp"),
+                        temp=web_system_info.get("temp"),
                         chips=web_system_info.get("asicCount", 1),
                         expected_chips=self.expected_chips,
                         missing=False,
